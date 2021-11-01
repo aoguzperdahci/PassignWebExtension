@@ -1,0 +1,91 @@
+.icon {
+    box-sizing: border-box;
+  }
+  
+  .wrapper {
+    display: inline-flex;
+  }
+  
+  .tooltip {
+      width: max-content;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background-color: #43a047;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    background-color: #ffa726;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #ffa726;
+    top: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: 60px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .orange:hover,
+  .wrapper .orange:hover .tooltip,
+  .wrapper .orange:hover .tooltip::before {
+    background-color: #ffa726;
+    color: #333333;
+  }
+  
+  .wrapper .red:hover,
+  .wrapper .red:hover .tooltip,
+  .wrapper .red:hover .tooltip::before {
+    background-color: #f00;
+    color: #ffffff;
+  }
+  
+  .wrapper .cyan:hover,
+  .wrapper .cyan:hover .tooltip,
+  .wrapper .cyan:hover .tooltip::before {
+    background-color: #26c6da;
+    color: #333333;
+  }
+
+  .wrapper .white:hover,
+  .wrapper .white:hover .tooltip,
+  .wrapper .white:hover .tooltip::before {
+    background-color: #ffffff;
+    color: #333333;
+  }
