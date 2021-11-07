@@ -91,8 +91,8 @@ function Login({ login, rememberMeState, setRememberMeState, loading, setLoading
             var salt = finalKey.slice(20, 84);
             var authPhrase = finalKey.slice(84, 100);
             var passPhrase = finalKey.slice(100);
-            var generatedKey = CryptoJS.PBKDF2(passPhrase, salt, { keySize: 8, iterations: 1000 });
-            var key = CryptoJS.enc.Hex.stringify(generatedKey);
+            var generatedKey = CryptoJS.PBKDF2(passPhrase, salt, { keySize: 18, iterations: 4000 });
+            var key = CryptoJS.enc.Base64.stringify(generatedKey);
             var authorization = CryptoJS.HmacSHA512(authPhrase, key).toString();
             var hash = CryptoJS.SHA256(passPhrase).toString();
             var token = CryptoJS.AES.encrypt(id + salt + authPhrase, hash).toString();
@@ -126,8 +126,8 @@ function Login({ login, rememberMeState, setRememberMeState, loading, setLoading
             var id = decrypted.slice(0, 20);
             var salt = decrypted.slice(20, 84);
             var authPhrase = decrypted.slice(84);
-            var generatedKey = CryptoJS.PBKDF2(shortKey, salt, { keySize: 8, iterations: 1000 });
-            var key = CryptoJS.enc.Hex.stringify(generatedKey);
+            var generatedKey = CryptoJS.PBKDF2(shortKey, salt, { keySize: 18, iterations: 4000 });
+            var key = CryptoJS.enc.Base64.stringify(generatedKey);
             var authorization = CryptoJS.HmacSHA512(authPhrase, key).toString();
             var newRememberMe = {
                 state: true,
