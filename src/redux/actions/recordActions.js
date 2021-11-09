@@ -6,7 +6,7 @@ import { setEditMode } from "./editModeActions";
 import { setSnackbar } from "./snackbarActions";
 import { setLoginLoading, setUpdateLoading } from "./loadingActions";
 
-const url = "https://europe-west1-passigndev.cloudfunctions.net/passign";
+const url = "https://europe-west1-passignapp.cloudfunctions.net/passign";
 
 export function setRecords(records) {
   return { type: actionTypes.SET_RECORDS, payload: records }

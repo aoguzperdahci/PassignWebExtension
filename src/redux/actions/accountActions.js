@@ -1,7 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import { setSnackbar } from "./snackbarActions";
 
-const url = "https://europe-west1-passigndev.cloudfunctions.net/passign";
+const url = "https://europe-west1-passignapp.cloudfunctions.net/passign";
 
 export function createAccountSuccess(id) {
   return { type: actionTypes.CREATE_ACCOUNT_SUCCESS, payload: id }

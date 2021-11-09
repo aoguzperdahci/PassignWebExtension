@@ -35,7 +35,7 @@ import miLogo from "./mi.png";
 import microsoftLogo from "./microsoft.png";
 import mubiLogo from "./mubi.jpg";
 import myspaceLogo from "./myspace.png";
-import netfilixLogo from "./netfilix.jpg";
+import netflixLogo from "./netflix.jpg";
 import nintendoLogo from "./nintendo.png";
 import okLogo from "./ok.png";
 import onedriveLogo from "./onedrive.png";
@@ -141,8 +141,8 @@ const logoFind = text => {
         return microsoftLogo;
     } else if (text.includes("myspace")) {
         return myspaceLogo;
-    } else if (text.includes("netfilix")) {
-        return netfilixLogo;
+    } else if (text.includes("netflix")) {
+        return netflixLogo;
     } else if (text.includes("nintendo")) {
         return nintendoLogo;
     } else if (text.includes("onedrive")) {
@@ -187,7 +187,7 @@ const logoFind = text => {
         return trendyolLogo;
     } else if (text.includes("tumblr")) {
         return tumblrLogo;
-    } else if (text.includes("turkiye")) {
+    } else if (text.includes("turkiye") || text.includes("edevlet")) {
         return turkiyeLogo;
     } else if (text.includes("twitch")) {
         return twitchLogo;

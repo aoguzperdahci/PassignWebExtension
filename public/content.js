@@ -58,8 +58,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         autofill.style.width = "100%";
         autofill.style.height = "100%";
         autofill.style.zIndex = 2147483647;
-        autofill.style.backgroundColor = "#303030";
-        autofill.style.opacity = 0.9;
+        autofill.style.opacity = 1;
 
         autofill.addEventListener("mouseover", function () {
             var event = new Event('change', { bubbles: true });

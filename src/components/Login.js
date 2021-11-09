@@ -86,6 +86,8 @@ function Login({ login, rememberMeState, setRememberMeState, loading, setLoading
             finalKey = finalKey.replace("\n", "");
             finalKey = finalKey.replace("\r", "");
             finalKey = finalKey.replace("\r", "");
+            finalKey = finalKey.replace(" ", "");
+            finalKey = finalKey.replace(" ", "");
 
             var id = finalKey.slice(0, 20);
             var salt = finalKey.slice(20, 84);

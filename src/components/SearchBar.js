@@ -77,7 +77,7 @@ const SearchBar = ({ recordsVisible, setRecordsVisibleState, searchText, setSear
                     onChange={handleSearchTextChange}
                     value={searchText}
                 />
-                <IconButton className={classes.searchButton} aria-label="search" onClick={clearInput}>
+                <IconButton aria-label="search" onClick={clearInput}>
                     <span className="material-icons md-48"> {searchText === "" ? "search" : "clear"}</span>
                 </IconButton>
             </Paper>
