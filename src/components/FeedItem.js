@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: "white",
+    fontSize: "1.1rem",
     textDecoration: "none",
     display: "inline-block",
     position: "absolute",
-    top: -10,
+    top: -5,
     paddingLeft: 20
   },
   img: {
@@ -52,7 +53,7 @@ const FeedItem = ({ record }) => {
         <div className={classes.record}>
           <img src={logoFind(record.website.toLowerCase())} alt={record.website} className={classes.img} />
           <h2 className={classes.text}>{record.website}</h2>
-          <h2 className={classes.text} style={{ opacity: 0.6, top: 25 }}>{record.username}</h2>
+          <h2 className={classes.text} style={{ opacity: 0.6, top: 30 }}>{record.username}</h2>
 
           <Tooltip className={classes.autofill} title={<Typography variant="subtitle2">Autofill</Typography>}>
             <IconButton onClick={() => autofill()} >
