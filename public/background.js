@@ -1,6 +1,6 @@
 var initialValue = null;
 var timeOut;
-
+//Use alarms and chrome.storage in manifest v3
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
   if (request.method === "getInitialValue") {
@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     initialValue = request.data;
     timeOut = setTimeout(function() {
       initialValue = null;
-    },180000)
+    },600000)
     sendResponse("initialValue set")
   } else if(request.method === "clearInitialValue") {
     initialValue = null;

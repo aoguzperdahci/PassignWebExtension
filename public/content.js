@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
             switch (inputs[i].type) {
                 case "text":
-                    if (passwordFiled === null && (inputs[i].id && inputs[i].id.toLocaleLowerCase().includes("password")) || (inputs[i].name && inputs[i].name.toLocaleLowerCase().includes("password"))) {
+                    if (passwordFiled === null && ((inputs[i].id && inputs[i].id.toLocaleLowerCase().includes("password")) || (inputs[i].name && inputs[i].name.toLocaleLowerCase().includes("password")))) {
                         passwordFiled = inputs[i];
                         continue;
                     }

@@ -90,7 +90,7 @@ const RecordDetail = ({ recordsVisible, editMode, setRecordsVisibleState }) => {
     };
 
     const generatePassword = () => {
-        var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%&()[]{}*/-+?<|>=_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%&*-+?<>ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var shuffledChars = shuffle(chars);
         var passwordLength = Math.floor(Math.random() * 10) + 15;
         var password = "";

@@ -4,6 +4,7 @@ import amazonLogo from "./amazon.png";
 import appstoreLogo from "./appstore.png";
 import battlenetLogo from "./battlenet.png";
 import beinconnectLogo from "./beinconnect.png";
+import biletinialLogo from "./biletinial.jpg";
 import binanceLogo from "./binance.png";
 import bitbucketLogo from "./bitbucket.png";
 import blutvLogo from "./blutv.jpg";
@@ -31,12 +32,15 @@ import instagramLogo from "./instagram.png";
 import itunesLogo from "./itunes.png";
 import linkedinLogo from "./linkedin.png";
 import mediumLogo from "./medium.png";
+import mhrsLogo from "./mhrs.jpg";
 import miLogo from "./mi.png";
 import microsoftLogo from "./microsoft.png";
 import mubiLogo from "./mubi.jpg";
 import myspaceLogo from "./myspace.png";
+import n11Logo from "./n11.png";
 import netflixLogo from "./netflix.jpg";
 import nintendoLogo from "./nintendo.png";
+import obiletLogo from "./obilet.jpg";
 import okLogo from "./ok.png";
 import onedriveLogo from "./onedrive.png";
 import originLogo from "./origin.png";
@@ -55,22 +59,27 @@ import soundcloudLogo from "./soundcloud.png";
 import spotifyLogo from "./spotify.png";
 import stackoverflowLogo from "./stackoverflow.png";
 import steamLogo from "./steam.png";
+import sunexpressLogo from "./sunexpress.jpg";
 import teamsLogo from "./teams.png";
 import tiktokLogo from "./tiktok.png";
 import tinderLogo from "./tinder.png";
 import trelloLogo from "./trello.png";
 import trendyolLogo from "./trendyol.jpg";
 import tumblrLogo from "./tumblr.png";
-import turkiyeLogo from "./turkiye.png"
+import turkiyeLogo from "./turkiye.png";
+import turnaLogo from "./turna.jpg"
 import twitchLogo from "./twitch.png";
 import twitterLogo from "./twitter.png";
 import uberLogo from "./uber.png";
+import ucuzabiletLogo from "./ucuzabilet.png";
+import udemyLogo from "./udemy.png";
 import uplayLogo from "./uplay.png";
 import viberLogo from "./viber.png";
 import vkLogo from "./vk.png";
 import wifiLogo from "./wifi.png";
 import xboxLogo from "./xbox.png";
 import yahooLogo from "./yahoo.png";
+import yemeksepetiLogo from "./yemeksepeti.jpg";
 import youtubeLogo from "./youtube.png";
 import zoomLogo from "./zoom.png";
 
@@ -87,6 +96,8 @@ const logoFind = text => {
         return battlenetLogo;
     } else if (text.includes("beinconnect")) {
         return beinconnectLogo;
+    } else if (text.includes("biletinial")) {
+        return biletinialLogo;
     } else if (text.includes("binance")) {
         return binanceLogo;
     } else if (text.includes("bitbucket")) {
@@ -137,17 +148,23 @@ const logoFind = text => {
         return linkedinLogo;
     } else if (text.includes("medium")) {
         return mediumLogo;
+    } else if (text.includes("mhrs")) {
+        return mhrsLogo;
     } else if (text.includes("microsoft")) {
         return microsoftLogo;
     } else if (text.includes("myspace")) {
         return myspaceLogo;
+    } else if (text.includes("n11")) {
+        return n11Logo;
     } else if (text.includes("netflix")) {
         return netflixLogo;
     } else if (text.includes("nintendo")) {
         return nintendoLogo;
+    } else if (text.includes("obilet")) {
+        return obiletLogo;
     } else if (text.includes("onedrive")) {
         return onedriveLogo;
-    } else if (text.includes("outlook")) {
+    } else if (text.includes("outlook") || text.includes("bilgeadam")) {
         return outlookLogo;
     } else if (text.includes("patreon")) {
         return patreonLogo;
@@ -177,6 +194,8 @@ const logoFind = text => {
         return stackoverflowLogo;
     } else if (text.includes("steam")) {
         return steamLogo;
+    } else if (text.includes("sunexpress")) {
+        return sunexpressLogo;
     } else if (text.includes("tiktok")) {
         return tiktokLogo;
     } else if (text.includes("tinder")) {
@@ -187,8 +206,10 @@ const logoFind = text => {
         return trendyolLogo;
     } else if (text.includes("tumblr")) {
         return tumblrLogo;
-    } else if (text.includes("turkiye") || text.includes("edevlet")) {
+    } else if (text.includes("turkiye") || text.includes("devlet")) {
         return turkiyeLogo;
+    } else if (text.includes("turna")) {
+        return turnaLogo;
     } else if (text.includes("twitch")) {
         return twitchLogo;
     } else if (text.includes("twitter")) {
@@ -197,6 +218,8 @@ const logoFind = text => {
         return viberLogo;
     } else if (text.includes("yahoo")) {
         return yahooLogo;
+    } else if (text.includes("yemeksepeti")) {
+        return yemeksepetiLogo;
     } else if (text.includes("youtube")) {
         return youtubeLogo;
     } else if (text.includes("zoom")) {
@@ -211,6 +234,10 @@ const logoFind = text => {
         return uplayLogo;
     } else if (text.includes("uber")) {
         return uberLogo;
+    } else if (text.includes("ucuzabilet")) {
+        return ucuzabiletLogo;
+    } else if (text.includes("udemy")) {
+        return udemyLogo;
     } else if (text.includes("teams")) {
         return teamsLogo;
     } else if (text.includes("origin")) {
