@@ -1,21 +1,30 @@
-var initialValue = null;
-var timeOut;
-//Use alarms and chrome.storage in manifest v3
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
-  if (request.method === "getInitialValue") {
-    sendResponse({ data: initialValue });
-  } else if (request.method === "setInitialValue") {
-    clearTimeout(timeOut);
-    initialValue = request.data;
-    timeOut = setTimeout(function() {
-      initialValue = null;
-    },600000)
+  if (request.method === "setInitialValue") {
+    console.log("set", request.data)
+    chrome.alarms.clear("PassignExtension");
+    setValue(request.data);
+    chrome.alarms.create("PassignExtension", {delayInMinutes: 3.0});
     sendResponse("initialValue set")
   } else if(request.method === "clearInitialValue") {
-    initialValue = null;
+    resetValue();
+    console.log("reset")
     sendResponse("initialValue clear")
   } else {
     sendResponse({});
   }
 });
+
+chrome.alarms.onAlarm.addListener(() => {
+  resetValue();
+})
+
+function setValue(records) {
+  chrome.storage.local.set({"initialValue": records}
+  );
+}
+
+function resetValue() {
+  chrome.storage.local.set({"initialValue": null}
+  );
+}

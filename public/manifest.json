@@ -1,9 +1,9 @@
 {
   "name": "Passign",
   "description" : "Password manager",
-  "version": "1.0",
-  "manifest_version": 2,
-  "browser_action": {
+  "version": "1.1",
+  "manifest_version": 3,
+  "action": {
     "default_popup": "index.html",
     "default_title": "Passign"
   },
@@ -14,8 +14,7 @@
     "128": "logo128.png"
   },
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
@@ -26,11 +25,19 @@
     "activeTab",
     "tabs",
     "storage",
-    "<all_urls>"
+    "alarms"
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "web_accessible_resources": [
-    "index.html",
-    "/static/*"
-  ]
+  "host_permissions": [
+    "<all_urls>"
+  ],  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [{
+    "resources": [    
+      "index.html",
+      "/static/*"
+    ],
+    "matches": ["<all_urls>"]
+  }]
 }

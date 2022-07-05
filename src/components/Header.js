@@ -29,12 +29,14 @@ const Header = ({ loginState, records, recordsVisible, encryptionKey, setEditSta
   const classes = useStyles();
 
   useEffect(() => {
-    if (loginState.state) {
-      var initialValue = {records: records, login: loginState, encryptionKey: encryptionKey}
-      sessionStorage.setItem("initialValue", JSON.stringify(initialValue));
-      document.getElementById("setInitialValue").click();
+    if (encryptionKey !== "") {
+      setTimeout(() => {
+        var initialValue = {records: records, login: loginState, encryptionKey: encryptionKey}
+        sessionStorage.setItem("initialValue", JSON.stringify(initialValue));
+        document.getElementById("setInitialValue").click();
+      }, 500);
     }
-  }, [loading, encryptionKey])
+  }, [encryptionKey, loading])
 
   const enterEditMode = () => {
     setEditState(true);

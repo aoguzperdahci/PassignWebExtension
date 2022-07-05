@@ -55,7 +55,7 @@ const FeedItem = ({ record }) => {
           <h2 className={classes.text}>{record.website}</h2>
           <h2 className={classes.text} style={{ opacity: 0.6, top: 30 }}>{record.username}</h2>
 
-          <Tooltip className={classes.autofill} title={<Typography variant="subtitle2">Autofill</Typography>}>
+          <Tooltip className={classes.autofill + " autofill"} title={<Typography variant="subtitle2">Autofill</Typography>}>
             <IconButton onClick={() => autofill()} >
               <span style={{ fontSize: 34 }} className="material-icons md-48">password</span>
             </IconButton>

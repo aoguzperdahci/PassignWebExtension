@@ -1,7 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import { setSnackbar } from "./snackbarActions";
 
-const url = "https://europe-west1-passignapp.cloudfunctions.net/passign";
+const url = process.env.REACT_APP_API_KEY;
 
 export function createAccountSuccess(id) {
   return { type: actionTypes.CREATE_ACCOUNT_SUCCESS, payload: id }

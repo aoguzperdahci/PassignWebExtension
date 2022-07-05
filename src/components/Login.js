@@ -9,6 +9,8 @@ import { getRecords } from "../redux/actions/recordActions"
 import { setRememberMe } from "../redux/actions/rememberMeActions"
 import { setLoginLoading } from "../redux/actions/loadingActions"
 import { setSnackbar } from '../redux/actions/snackbarActions';
+import { setSessionState } from '../redux/actions/sessionStateActions';
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Login({ login, rememberMeState, setRememberMeState, loading, setLoading, setSnackbarAlert }) {
+function Login({ login, rememberMeState, setRememberMeState, loading, setLoading, setSnackbarAlert, loginState, setSession }) {
     const classes = useStyles();
     const [masterKey, setMasterKey] = useState("");
     const [username, setUsername] = useState("");
@@ -309,7 +311,8 @@ function Login({ login, rememberMeState, setRememberMeState, loading, setLoading
 const mapStateToProps = state => {
     return {
         rememberMeState: state.rememberMeReducer,
-        loading: state.loginLoadingReducer
+        loading: state.loginLoadingReducer,
+        loginState: state.accountReducer,
     };
 }
 
@@ -319,6 +322,7 @@ function mapDispatchToProps(dispatch) {
         setRememberMeState: (state) => { dispatch(setRememberMe(state)) },
         setLoading: (state) => { dispatch(setLoginLoading(state)) },
         setSnackbarAlert: (state) => { dispatch(setSnackbar(state)) },
+        setSession: () => {dispatch(setSessionState())}
     }
 }
 

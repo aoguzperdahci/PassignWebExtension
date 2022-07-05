@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { green, blue } from "@material-ui/core/colors";
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
@@ -9,6 +10,8 @@ import LoginPage from '../pages/LoginPage';
 import SnackbarAlert from './SnackbarAlert';
 import RecordsDetailPage from '../pages/RecordsDetailPage';
 import RecordsPage from '../pages/RecordsPage';
+import { setSessionState } from '../redux/actions/sessionStateActions';
+
 
 const theme = createTheme(({
   typography: {
@@ -27,7 +30,14 @@ const theme = createTheme(({
   }
 }));
 
-function App({ loginState }) {
+function App({ loginState, setSession }) {
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSession()
+    }, 20);
+}, [])
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -74,5 +84,11 @@ const mapStateToProps = state => {
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+      setSession: () => {dispatch(setSessionState())}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 

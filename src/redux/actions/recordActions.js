@@ -6,7 +6,7 @@ import { setEditMode } from "./editModeActions";
 import { setSnackbar } from "./snackbarActions";
 import { setLoginLoading, setUpdateLoading } from "./loadingActions";
 
-const url = "https://europe-west1-passignapp.cloudfunctions.net/passign";
+const url = process.env.REACT_APP_API_KEY;
 
 export function setRecords(records) {
   return { type: actionTypes.SET_RECORDS, payload: records }

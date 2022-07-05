@@ -24,21 +24,23 @@ const SearchBar = ({ recordsVisible, setRecordsVisibleState, searchText, setSear
     const classes = useStyles();
 
     useEffect(() => {
-        var textarea = document.getElementById("searchUrl");
+        setTimeout(() => {
+            var textarea = document.getElementById("searchUrl");
 
-        if (textarea.value) {
-            var text = textarea.value;
-            var records = recordsVisible.map(record => search(record, text));
-            if (records.some(isVisible)) {
-                setSearchTextState(text);
-                setRecordsVisibleState(records);
-            } else {
-                setSearchTextState("");
-                records = recordsVisible.map(record => search(record, ""));
-                setRecordsVisibleState(records);
+            if (textarea.value) {
+                var text = textarea.value;
+                var records = recordsVisible.map(record => search(record, text));
+                if (records.some(isVisible)) {
+                    setSearchTextState(text);
+                    setRecordsVisibleState(records);
+                } else {
+                    setSearchTextState("");
+                    records = recordsVisible.map(record => search(record, ""));
+                    setRecordsVisibleState(records);
+                }
+                textarea.value = null;
             }
-            textarea.value = null;
-        }
+        }, 20);
 
     }, [])
 

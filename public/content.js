@@ -13,6 +13,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             return;
         }
 
+        console.log(inputs)
+
         var usernameField = null;
         var emailField = null;
         var passwordFiled = null;
